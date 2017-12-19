@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Equinox.Application.ViewModels;
-using Equinox.Domain.Models;
+using Equinox.Domain.Customers;
 
 namespace Equinox.Application.AutoMapper
 {

@@ -1,12 +1,12 @@
-using Equinox.Domain.Customers;
+using Equinox.Domain.Bookings;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Equinox.Infra.Data.Mappings
-{    
-    public class CustomerMap : IEntityTypeConfiguration<Customer>
+{
+    public class EquipmentMap : IEntityTypeConfiguration<Equipment>
     {
-        public void Configure(EntityTypeBuilder<Customer> builder)
+        public void Configure(EntityTypeBuilder<Equipment> builder)
         {
             builder.Property(c => c.Id)
                 .HasColumnName("Id");
@@ -16,12 +16,13 @@ namespace Equinox.Infra.Data.Mappings
                 .HasMaxLength(100)
                 .IsRequired();
 
-            builder.Property(c => c.Email)
-                .HasColumnType("varchar(100)")
-                .HasMaxLength(11)
+            builder.Property(c => c.EquipmentType)
                 .IsRequired();
 
-            builder.ToTable("Customers");
+            builder.Property(c => c.Price)
+                .IsRequired();
+
+            builder.ToTable("Equipments");
         }
     }
 }

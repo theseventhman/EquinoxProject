@@ -1,5 +1,5 @@
 ﻿using Equinox.Domain.Core.Events;
-using Equinox.Domain.Interfaces;
+using Equinox.Domain.Core.Interfaces;
 using Equinox.Infra.Data.Repository.EventSourcing;
 using Newtonsoft.Json;
 

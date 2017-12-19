@@ -5,8 +5,8 @@ using AutoMapper.QueryableExtensions;
 using Equinox.Application.EventSourcedNormalizers;
 using Equinox.Application.Interfaces;
 using Equinox.Application.ViewModels;
-using Equinox.Domain.Commands;
-using Equinox.Domain.Core.Bus;
+using Equinox.Domain.Core.Interfaces;
+using Equinox.Domain.Customers.Commands;
 using Equinox.Domain.Interfaces;
 using Equinox.Infra.Data.Repository.EventSourcing;
 

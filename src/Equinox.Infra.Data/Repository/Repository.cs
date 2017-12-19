@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Linq;
-using Equinox.Domain.Interfaces;
+using Equinox.Domain.Core.Interfaces;
+using Equinox.Domain.Core.Models;
 using Equinox.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 
 namespace Equinox.Infra.Data.Repository
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity
     {
         protected readonly EquinoxContext Db;
         protected readonly DbSet<TEntity> DbSet;
@@ -50,7 +51,6 @@ namespace Equinox.Infra.Data.Repository
         public void Dispose()
         {
             Db.Dispose();
-            GC.SuppressFinalize(this);
         }
     }
 }

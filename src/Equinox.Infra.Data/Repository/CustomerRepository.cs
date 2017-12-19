@@ -1,6 +1,6 @@
 ﻿using System.Linq;
+using Equinox.Domain.Customers;
 using Equinox.Domain.Interfaces;
-using Equinox.Domain.Models;
 using Equinox.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,13 +1,11 @@
 ﻿using AutoMapper;
 using Equinox.Application.Interfaces;
 using Equinox.Application.Services;
-using Equinox.Domain.CommandHandlers;
-using Equinox.Domain.Commands;
-using Equinox.Domain.Core.Bus;
 using Equinox.Domain.Core.Events;
+using Equinox.Domain.Core.Interfaces;
 using Equinox.Domain.Core.Notifications;
-using Equinox.Domain.EventHandlers;
-using Equinox.Domain.Events;
+using Equinox.Domain.Customers.Commands;
+using Equinox.Domain.Customers.Events;
 using Equinox.Domain.Interfaces;
 using Equinox.Infra.CrossCutting.Bus;
 using Equinox.Infra.CrossCutting.Identity.Authorization;
@@ -35,9 +33,11 @@ namespace Equinox.Infra.CrossCutting.IoC
             // Domain Bus (Mediator)
             services.AddScoped<IMediatorHandler, InMemoryBus>();
 
+            // TODO: Retirar?
             // ASP.NET Authorization Polices
-            services.AddSingleton<IAuthorizationHandler, ClaimsRequirementHandler>(); ;
+            services.AddSingleton<IAuthorizationHandler, ClaimsRequirementHandler>();
 
+            // TODO: Retirar?
             // Application
             services.AddSingleton(Mapper.Configuration);
             services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<IConfigurationProvider>(), sp.GetService));

@@ -14,6 +14,8 @@ namespace Equinox.Infra.Data.Mappings
             builder.Property(c => c.MessageType)
                 .HasColumnName("Action")
                 .HasColumnType("varchar(100)");
+
+            builder.ToTable("StoredEvents");
         }
     }
 }

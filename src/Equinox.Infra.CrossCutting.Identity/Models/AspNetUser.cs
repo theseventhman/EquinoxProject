@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Security.Claims;
-using Equinox.Domain.Interfaces;
+using Equinox.Domain.Core.Interfaces;
 using Microsoft.AspNetCore.Http;
 
 namespace Equinox.Infra.CrossCutting.Identity.Models
